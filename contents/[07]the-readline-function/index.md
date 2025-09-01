@@ -1,49 +1,42 @@
 ---
-title: "The readline function"
+title: "The readLine function"
 description: ""
 order: 7
 ---
 
-
-foo
+The `readLine()` function in Swift reads a line of input from the user as a string. Let's see a simple example: 
 
 ```swift
-let x = 5
-let y = 5
-var z = 0
+print("Please enter something:") 
+let rawInput: String? = readLine() 
 
-z = x + y // addition
-print(z) // => 10
-
-z = x - y // subtraction
-print(z) // => 0
-
-z = x * y // multiplication
-print(z) // => 25
-
-z = x / y // division
-print(z) // => 1
-
-
-var x = 10
-
-x += 2 // addition
-print(x) // => 12
-
-x -= 2 // subtraction
-print(x) // => 10
-
-x *= 2 // multiplication
-print(x) // => 20
-
-x /= 2 // division
-print(x) // => 10
+let input = rawInput ?? "" 
+print("User input: `\(input)`") 
 ```
 
-bar
+While `readLine()` is ideal for reading `String` values, you often need to convert user input to other types, such as integers, doubles, or booleans. To achieve this, use type casting or initializers to safely transform the input string into the desired type:
 
-```sh
-swift main.swift
+```swift
+print("Please enter a number:")
+
+let rawInput: String? = readLine()
+let input = rawInput ?? ""
+
+let number = Int(input) ?? 0
+print("The number: `\(number)`")
 ```
 
-baz
+For custom boolean input values, you typically use a comparison to decide whether something is `true` or `false`:
+
+```swift
+print("Please enter yes or no.")
+
+let input: String = readLine() ?? ""
+
+let value: Bool = input == "yes"
+print("The bool value: \(value)")
+```
+
+In Swift, you can read multiple lines by simply calling `readLine()` more than once — each call will pause and wait for the user to type something and press Return. 
+
+

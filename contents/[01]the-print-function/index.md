@@ -4,33 +4,35 @@ description: ""
 order: 1
 ---
 
-The print function displays text or values on the screen. In the simplest form it means we can display messages on the command line. Create a new file named `main.swift` and place the following Swift code inside the file:
+The print function displays text or values on the screen. 
+
+We can display messages on the command line using print, such as the famous "Hello, World!" text. To try it out, create a new file named main.swift and place the following Swift code inside:
 
 ```swift
-// FILE: main.swift
-
 print("Hello, World!")
-
-/**
-Run Swift files using the command line:
-
-$ swift main.swift
-> Hello, World!
-*/
 ```
 
-Run the program via the `swift main.swift` command, it will display the `Hello, World!` message. 
+The Swift toolchain is the complete set of tools — including the compiler, standard library, debugger, and package manager — that enables building, running, and testing Swift programs across platforms.
 
----
+The `swift` command is included in the Swift toolchain. By running your program with the `swift` command, the compiler executes the code and displays the classic "Hello, World!" message:
+
 
 ```sh
-# run the swift file
 swift main.swift
 # Hello, world!
+```
 
-# build the program
+The Swift compiler is part of the Swift toolchain, and the `swiftc` command is used to compile Swift source files into executable binaries. You can start the compilation process by running the following command:
+
+```sh
 swiftc -o app main.swift
-# run the program
+```
+
+The `swiftc` command generates an `app` binary, which you can then execute directly from the command line like this:
+
+```sh
 ./app
 # Hello, world!
 ```
+Now that we can build and run basic Swift programs, it’s time to dive deeper into the language and explore its core features.
+

@@ -1,0 +1,39 @@
+id: sitemap
+definesType: true
+
+queries:
+    pages:
+        contentType: html
+        scope: list
+        orderBy:
+            - key: lastUpdate
+              direction: desc
+
+    examples:
+        contentType: example
+        scope: list
+        orderBy:
+            - key: lastUpdate
+              direction: desc
+
+contentTypes: 
+    include:
+        - sitemap
+        - html
+
+dataTypes:
+    date: 
+        formats:
+            sitemap:
+                format: "yyyy-MM-dd"
+
+engine: 
+    id: mustache
+    options:
+        contentTypes: 
+            sitemap:
+                view: "sitemap"
+output:
+    path: ""
+    file: sitemap
+    ext: xml

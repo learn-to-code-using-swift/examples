@@ -1,0 +1,12 @@
+name: "Learn to code using Swift"
+description: "Official template for the Learn to code using Swift book."
+generatorVersions:
+    - "1.0.0-beta.5"
+    - "1.0.0-beta.6"
+
+authors:
+    - name: "Kitti Bödecs"
+    - name: "Tibor Bödecs"
+
+tags:
+    - "book"

@@ -1,0 +1,56 @@
+.wrapper {
+    padding: 0 0.5rem;
+    max-width: 720px;
+    margin: 0 auto;
+}
+.wrapper > *:first-child {
+    margin-top: 0;
+    padding-top: 3rem;
+}
+
+
+h1 {
+    margin-top: 0;
+}
+
+.grid .next, .grid .prev {
+    background: var(--color-background-card);
+    color: var(--color-text-card);
+    padding: 0 1.5rem;
+    padding-bottom: 1.5rem;
+    border-radius: 0.5rem;    
+}
+
+.grid .next p, .grid .prev p {
+    margin-bottom: 0;
+}
+.grid .next {
+    text-align: right;
+}
+.grid .prev:hover, .grid .next:hover {
+    text-decoration: none;
+}
+.grid .prev p.link, .grid .next p.link,
+.grid .prev p.arrow, .grid .next p.arrow {
+    color: var(--color-primary);
+}
+.grid .prev:hover p.link, .grid .next:hover p.link {
+    text-decoration: underline;
+    text-decoration-color: #444;   
+}
+.grid .prev p.link, .grid .next p.link {
+    margin-top: 0;
+}
+
+.footnotes {
+    background: var(--color-background-card);
+    color: var(--color-text-card);
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 0.5rem;    
+}
+
+.footnotes p {
+    margin-top: 0;
+    margin-bottom: 0;
+}

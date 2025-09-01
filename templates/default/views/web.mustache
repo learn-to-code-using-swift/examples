@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html {{#site.language}}lang="{{.}}"{{/site.language}}>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="canonical" href="{{page.canonical}}">
+    
+    <title>{{site.name}}</title>
+    <meta name="description" content="{{page.description}}">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+        media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+        media="(prefers-color-scheme: dark)"
+    >
+
+    <link rel="stylesheet" media="screen" href="/css/variables.css"> 
+    <link rel="stylesheet" media="screen" href="/css/base.css">
+    <link rel="stylesheet" media="screen" href="/css/menu.css">
+    <link rel="stylesheet" media="screen" href="/css/outline.css">
+    <link rel="stylesheet" media="screen" href="/css/theme.css">
+
+    <link rel="stylesheet" media="screen" href="/css/web.css">
+
+    
+    {{#page.css}}<link rel="stylesheet" href="{{.}}">{{/page.css}}
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
+    />
+    <style>
+        .hljs-copy-button { 
+            cursor: pointer; 
+            background-color: var(--color-background-primary); 
+            color: var(--color-text-primary); 
+        }
+        .hljs-copy-button:hover { cursor: pointer; }
+        .hljs-copy-container { top: 0.5rem; right: 0.5rem; }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+
+    <script>
+    hljs.addPlugin(
+        new CopyButtonPlugin({
+            autohide: true,
+        })
+    );
+    hljs.highlightAll();
+    </script>
+
+</head>
+
+<body>
+
+    {{#empty(context.categories)}}
+    {{/empty(context.categories)}}
+    {{^empty(context.categories)}}
+    <div id="menu">
+        <input id="menu-checkbox" type="checkbox">
+        <label id="menu-click-area" for="menu-checkbox">
+            <div class="icon">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+            </div>
+
+            <div class="panel">
+                <div class="contents">
+                    <nav>
+                        <h5>Outline</h5>
+                        <ul>
+                        {{#context.categories}}
+                            <li class="chapter">
+                                <a href="#{{slug.value}}">{{title}}</a>
+                                {{#empty(guides)}}
+                                {{/empty(guides)}}
+                                {{^empty(guides)}}
+                                <input id="chapter-{{title}}" type="checkbox">
+                                <label id="chapter-{{title}}-click-area" for="chapter-{{title}}">
+                                    <div class="arrow-wrapper">
+                                        <span class="arrow"></span>
+                                    </div>
+                                    <ul>
+                                        {{#guides}}
+                                        <li><a href="#{{slug.value}}">{{title}}</a></li>
+                                        {{/guides}}
+                                    </ul>
+                                </label>
+                                {{/empty(guides)}}
+                            </li>                        
+                        {{/context.categories}}
+                        </ul>        
+                    </nav>
+                </div>
+            </div>
+        </label>      
+    </div>	
+    {{/empty(context.categories)}}
+
+    <div id="outline">
+        <input id="outline-checkbox" type="checkbox">   
+        <label id="outline-click-area" for="outline-checkbox">
+            <div class="icon">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </div>
+            <div class="panel">
+                <div class="contents">
+                    <h5>On this page</h5>
+                    <ul>
+                    {{#context.categories}}
+                        <li class="level-2">
+                            <a href="#{{slug.value}}">{{title}}</a>
+                        </li>
+                        {{#guides}}
+                        <li class="level-3">
+                            <a href="#{{slug.value}}">{{title}}</a>
+                        </li>
+                        {{/guides}}
+                    {{/context.categories}}
+                    </ul>
+                </div>
+            </div>
+        </label>    
+
+    </div>
+    
+
+
+    <main id="page-container">
+    
+        <div class="wrapper">
+            <h1 style="font-size: 4rem; line-height: 6rem; margin-bottom: 6rem;">Learn<br>to<br>code<br>using<br>Swift</h1>
+        </div>
+    {{#context.categories}}
+
+        <div class="wrapper">
+            <a id="{{slug.value}}">Learn to code using Swift</a>
+            <article>
+            {{& contents.html}}
+            </article>
+        </div>
+        
+
+        {{#guides}}
+
+            <div class="wrapper">    
+                <a href="#{{category.slug.value}}">{{category.title}}</a>
+                <a id="{{slug.value}}"></a>
+                <article>
+                {{& contents.html}}
+                </article>
+            </div>
+        {{/guides}}
+
+    {{/context.categories}}
+
+    </main>
+
+    {{#page.js}}<script src="{{.}}" async></script>{{/page.js}}
+
+</body>
+</html>
+

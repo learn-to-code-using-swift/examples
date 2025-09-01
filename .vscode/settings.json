@@ -1,0 +1,31 @@
+{
+    "cSpell.words": [
+        "associatedtype",
+        "Bödecs",
+        "deinit",
+        "Deinitialization",
+        "discardable",
+        "Existentials",
+        "failable",
+        "fclose",
+        "fileprivate",
+        "fopen",
+        "fputs",
+        "initalizer",
+        "initalizers",
+        "inout",
+        "Kitti",
+        "memberwise",
+        "Subrange",
+        "Takács",
+        "Tibi",
+        "typealias",
+        "variadics"
+    ],
+    "mcp": {
+        "inputs": [],
+        "servers": {
+            
+        }
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html {{#site.language}}lang="{{.}}"{{/site.language}}>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="canonical" href="{{page.canonical}}">
+    
+    <title>{{site.name}}</title>
+    <meta name="description" content="{{page.description}}">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+        media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+        media="(prefers-color-scheme: dark)"
+    >
+
+    <link rel="stylesheet" media="print" href="/css/print.css">
+    
+    {{#page.css}}<link rel="stylesheet" href="{{.}}">{{/page.css}}
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
+    />
+    <style>
+        .hljs-copy-button { 
+            cursor: pointer; 
+            background-color: var(--color-background-primary); 
+            color: var(--color-text-primary); 
+        }
+        .hljs-copy-button:hover { cursor: pointer; }
+        .hljs-copy-container { top: 0.5rem; right: 0.5rem; }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+
+    <script>
+    hljs.addPlugin(
+        new CopyButtonPlugin({
+            autohide: true,
+        })
+    );
+    hljs.highlightAll();
+    </script>
+
+</head>
+
+<body>
+
+    <div class="cover-page">
+        <img src="/images/cover.jpeg" alt="Book cover">
+    </div>
+
+    <div class="page-break"></div>
+
+    <main id="page-container">
+    
+    {{#context.categories}}
+        
+        <div class="chapter-marker">{{chapter}}</div>
+        {{& contents.html}}
+        <div class="page-break"></div>
+        
+        {{#guides}}
+            <article>
+            <div class="chapter-marker">{{category.chapter}} &middot; {{category.title}}</div>
+            {{& contents.html}}
+            </article>
+            <div class="page-break"></div>
+        {{/guides}}
+
+    {{/context.categories}}
+    </main>
+
+    {{#page.js}}<script src="{{.}}" async></script>{{/page.js}}
+
+</body>
+</html>
+

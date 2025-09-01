@@ -1,0 +1,44 @@
+{{<html}}
+{{$main}}
+<div class="wrapper">
+
+    <article>
+
+        <a href="{{baseUrl}}">{{site.name}}</a>
+        <h1>{{page.title}}</h1>
+        <hr>
+
+        {{& page.contents.html}}
+
+        <section>
+        <div class="grid grid-2">
+
+        {{^page.prev}}
+        <div></div>
+        {{/page.prev}}
+        {{#page.prev}}
+        <a href="{{permalink}}" class="prev">
+            <p class="arrow">&larr;</p>
+            <p><small>Previous</small></p>
+            <p class="link">{{title}}</p>
+        </a>
+        {{/page.prev}}
+            
+        {{^page.next}}
+        <div></div>
+        {{/page.next}}
+        {{#page.next}}
+        <a href="{{permalink}}" class="next">
+            <p class="arrow">&rarr;</p>
+            <p><small>Next</small></p>
+            <p class="link">{{title}}</p>
+        </a>
+        {{/page.next}}
+        </div>
+        </section>
+
+    </article>
+</div>
+    
+{{/main}}
+{{/html}}

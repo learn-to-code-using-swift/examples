@@ -1,0 +1,47 @@
+id: html
+definesType: true
+
+assets:
+    behaviors:
+        - id: copy
+    properties:
+        - action: add
+          property: css
+          resolvePath: true
+          input:
+              name: "style"
+              ext: "css"
+
+queries: 
+    examples:
+        contentType: example
+        scope: detail
+        orderBy:
+            - key: order
+              direction: asc
+
+dataTypes:
+    date:
+        formats:
+            full: 
+                format: "yyyy/MM/dd"
+            year: 
+                format: "y"
+
+contentTypes: 
+    include:
+        - html
+        - example
+
+engine: 
+    id: mustache
+    options:
+        contentTypes: 
+            html:
+                view: "pages.default"
+            example:
+                view: "pages.example"
+output:
+    path: "{{slug}}"
+    file: index
+    ext: html

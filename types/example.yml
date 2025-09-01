@@ -1,0 +1,38 @@
+id: example
+default: true
+paths: 
+    - contents
+
+properties:
+    title:
+        type: string
+        required: true
+    order:
+        type: int
+        required: false
+        defaultValue: 100
+
+queries:
+    prev:
+        contentType: example
+        limit: 1
+        filter:
+            and:
+                - key: order
+                  operator: lessThan
+                  value: "{{order}}"
+        orderBy:
+            - key: order
+              direction: desc
+
+    next:
+        contentType: example
+        limit: 1
+        filter:
+            and:
+                - key: order
+                  operator: greaterThan
+                  value: "{{order}}"
+        orderBy:
+            - key: order
+              direction: asc

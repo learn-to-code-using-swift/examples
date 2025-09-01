@@ -1,0 +1,26 @@
+id: not-found
+definesType: true
+
+dataTypes:
+    date:
+        formats:
+            full: 
+                format: "yyyy/MM/dd"
+            year: 
+                format: "y"
+
+contentTypes: 
+    include:
+        - "not-found"
+
+engine: 
+    id: mustache
+    options:
+        contentTypes: 
+            not-found:
+                view: "pages.404"
+
+output:
+    path: ""
+    file: 404
+    ext: html

@@ -1,0 +1,6 @@
+name: "Learn Swift By Examples"
+description: "Learn Swift By Examples"
+language: "en-US"
+navigation:
+    - label: "Home"
+      url: "/"

@@ -1,0 +1,19 @@
+{{<html}}
+{{$main}}
+
+<div class="wrapper">
+    <article>
+        {{& page.contents.html}}
+
+        <h2>Examples</h2>
+        <ul>
+        {{#context.examples}}
+            <li><a href="{{permalink}}">{{title}}</a></li>
+        {{/context.examples}}
+        </ul>
+
+    </article>
+</div>
+
+{{/main}}
+{{/html}}

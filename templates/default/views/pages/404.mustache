@@ -1,0 +1,21 @@
+{{<html}}
+{{$menu}}
+{{/menu}}
+{{$main}}
+
+<div id="not-found" class="wrapper" style="text-align: center; margin-top: 6rem;">
+
+    <a id="logo" href="/docs/">
+        <img
+            src="{{baseUrl}}/logos/ltcus.png"
+            alt="Logo of {{site.name}}"
+            title="{{site.name}}"
+            width="96px"
+        >
+    </a>
+
+    {{& page.contents.html}}
+</div>
+
+{{/main}}
+{{/html}}

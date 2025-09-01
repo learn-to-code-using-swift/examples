@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html {{#site.language}}lang="{{.}}"{{/site.language}}>
+<head>
+    <meta charset="utf-8">
+    {{#page.noindex}}<meta name="robots" content="noindex">{{/page.noindex}}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="canonical" href="{{page.canonical}}">
+    {{#page.hreflang}}
+    <link rel="alternate" hreflang="{{lang}}" href="{{url}}">
+    {{/page.hreflang}}
+    {{#page.prev}}<link rel="prev" href="{{permalink}}">{{/page.prev}}
+    {{#page.next}}<link rel="next" href="{{permalink}}">{{/page.next}}
+    
+    <title>{{page.title}} - {{site.name}}</title>
+    <meta name="description" content="{{page.description}}">
+    
+    <meta property="og:url" content="{{page.permalink}}">
+    <meta property="og:title" content="{{page.title}} - {{site.name}}">
+    <meta property="og:description" content="{{page.description}}">
+    {{#page.imageUrl}}<meta property="og:image" content="{{.}}" />{{/page.imageUrl}}
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{page.title}} - {{site.name}}">
+    <meta name="twitter:description" content="{{page.description}}">
+    {{#page.imageUrl}}<meta name="twitter:image" content="{{.}}">{{/page.imageUrl}}
+    
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+        media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+        media="(prefers-color-scheme: dark)"
+    >
+
+    <link rel="stylesheet" media="screen" href="/css/variables.css"> 
+    <link rel="stylesheet" media="screen" href="/css/base.css">
+    <link rel="stylesheet" media="screen" href="/css/theme.css">
+
+    {{#page.css}}<link rel="stylesheet" href="{{.}}">{{/page.css}}
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
+    />
+    <style>
+        .hljs-copy-button { 
+            cursor: pointer; 
+            background-color: var(--color-background-primary); 
+            color: var(--color-text-primary); 
+        }
+        .hljs-copy-button:hover { cursor: pointer; }
+        .hljs-copy-container { top: 0.5rem; right: 0.5rem; }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+
+    <script>
+    hljs.addPlugin(
+        new CopyButtonPlugin({
+            autohide: true,
+        })
+    );
+    hljs.highlightAll();
+    </script>
+
+</head>
+
+<body>
+
+    <main id="page-container">
+    {{$main}}
+        <p>No content.</p>
+    {{/main}}
+    </main>
+
+    {{#page.js}}<script src="{{.}}" async></script>{{/page.js}}
+
+</body>
+</html>

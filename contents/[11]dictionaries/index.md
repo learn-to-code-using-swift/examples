@@ -5,45 +5,98 @@ order: 11
 ---
 
 
-foo
+A dictionary is a collection that stores **key–value pairs**. Each value is associated with a unique key, which lets you look up values quickly. Unlike arrays, which use integer indexes, dictionaries allow keys of any `Hashable` type such as `String`, `Int`, or `Bool`.
 
 ```swift
-let x = 5
-let y = 5
-var z = 0
+// Dictionary with String keys and String values
+let capitals = [
+    "France": "Paris",
+    "Japan": "Tokyo",
+    "Brazil": "Brasília"
+]
 
-z = x + y // addition
-print(z) // => 10
-
-z = x - y // subtraction
-print(z) // => 0
-
-z = x * y // multiplication
-print(z) // => 25
-
-z = x / y // division
-print(z) // => 1
-
-
-var x = 10
-
-x += 2 // addition
-print(x) // => 12
-
-x -= 2 // subtraction
-print(x) // => 10
-
-x *= 2 // multiplication
-print(x) // => 20
-
-x /= 2 // division
-print(x) // => 10
+// Empty dictionaries
+let dict1: Dictionary<String, Int> = [:]
+let dict2: [String: Int] = [:]
+let dict3 = [String: Int]()
 ```
 
-bar
+Dictionaries automatically enforce uniqueness of keys. If the same key is used twice, the last value replaces the earlier one.
 
-```sh
-swift main.swift
+You can check basic properties, access values, and list keys or values:
+
+```swift
+// Check if the dictionary is empty
+print(capitals.isEmpty)   
+
+// Get the number of key–value pairs
+print(capitals.count)      
+
+// Access a value
+print(capitals["France"]!)
+
+// Safe access with default value
+print(capitals["India", default: "Not found"])
+
+// Access all keys
+print(capitals.keys) 
+
+// Access all values
+print(capitals.values)
 ```
 
-baz
+To modify a dictionary, declare it with `var`. Adding or updating a key is done using assignment. Removing items can be done by assigning `nil` or using `.removeValue(forKey:)`:
+
+```swift
+var capitals = [
+    "France": "Paris",
+    "Japan": "Tokyo"
+]
+
+// Add a new key–value pair
+capitals["Hungary"] = "Budapest"
+
+// Update an existing value
+capitals["Japan"] = "Kyoto"
+
+// Remove a value by key
+capitals["France"] = nil
+capitals.removeValue(forKey: "Japan")
+
+// Remove all key–value pairs
+capitals.removeAll()
+```
+
+Dictionaries also support quick lookups and utility methods:
+
+```swift
+let scores = [
+    "Alice": 95,
+    "Bob": 78,
+    "Charlie": 88
+]
+
+// Check if a key exists
+print(scores["Alice"] != nil)
+
+// Check if any value matches a condition
+print(scores.contains { $0.value > 90 }) 
+```
+
+Keys and values are usually homogeneous types (all the same), but values can also be stored as `Any` if needed:
+
+```swift
+let person: [String: Any] = [
+    "name": "John Doe",
+    "age": 30,
+    "isDeveloper": true
+]
+
+// Safely casts the "name" value to String using as?
+let name = person["name"] as? String ?? "unknown"
+print(name)
+```
+
+Dictionaries are ideal when you need fast lookups by key and to ensure that each key is unique within the collection.
+
+

@@ -4,46 +4,47 @@ description: ""
 order: 30
 ---
 
+An assertion is basically a check if a condition is true. If it's false, the program crashes in Debug mode with an optional message. In Release mode, `assert` is completely ignored.
 
-foo
+Use it when you want to double-check assumptions during development and when you want to catch mistakes early without affecting Release builds:
+
 
 ```swift
-let x = 5
-let y = 5
-var z = 0
+let age = -1
 
-z = x + y // addition
-print(z) // => 10
-
-z = x - y // subtraction
-print(z) // => 0
-
-z = x * y // multiplication
-print(z) // => 25
-
-z = x / y // division
-print(z) // => 1
-
-
-var x = 10
-
-x += 2 // addition
-print(x) // => 12
-
-x -= 2 // subtraction
-print(x) // => 10
-
-x *= 2 // multiplication
-print(x) // => 20
-
-x /= 2 // division
-print(x) // => 10
+assert(age >= 0, "Age can't be negative!")  
 ```
 
-bar
+If you don't have a condition to check but want to indicate a serious failure, you can also use:
 
-```sh
-swift main.swift
+```swift
+assertionFailure("This should never happen")
 ```
 
-baz
+Use `precondition` when violating a rule should never be allowed — not even in production. Unlike `assert`, `precondition` stays active even in Release mode. If the condition is false, your program crashes.
+
+Let's say you must never receive a negative value — it would lead to incorrect results or corrupted state. You want to stop execution even in Release mode:
+
+```swift
+let number = -10
+
+precondition(number >= 0, "Only positive numbers allowed")  
+```
+
+If this ever fails, it's a serious bug—your program should not continue running. Just like with `assert`, there is also:
+
+```swift
+preconditionFailure("Unreachable code")
+```
+
+The `fatalError` function doesn't check a condition—it simply crashes the program immediately with a message. It's always active, in both Debug and Release mode.
+
+Use it when a feature is not yet implemented, like here:
+
+```swift
+func convertToJSON() -> String {
+    fatalError("This function hasn't been written yet")
+}
+```
+
+Using `fatalError` here makes your intent crystal clear. Anyone reading your code will instantly see that the function is incomplete on purpose.

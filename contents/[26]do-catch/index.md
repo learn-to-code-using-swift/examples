@@ -4,46 +4,74 @@ description: ""
 order: 26
 ---
 
-
-foo
+Effective error handling begins by defining an enum or struct to represent all possible error cases your code might encounter:
 
 ```swift
-let x = 5
-let y = 5
-var z = 0
+enum InputError: Error {
+    case invalidNumber
+}
 
-z = x + y // addition
-print(z) // => 10
+print("Please enter a number:")
+let rawInput = readLine() ?? ""
 
-z = x - y // subtraction
-print(z) // => 0
-
-z = x * y // multiplication
-print(z) // => 25
-
-z = x / y // division
-print(z) // => 1
-
-
-var x = 10
-
-x += 2 // addition
-print(x) // => 12
-
-x -= 2 // subtraction
-print(x) // => 10
-
-x *= 2 // multiplication
-print(x) // => 20
-
-x /= 2 // division
-print(x) // => 10
+if let numberInput = Int(rawInput) {
+    print(numberInput)
+}
+else {
+    throw InputError.invalidNumber
+}
 ```
 
-bar
+Because the thrown error is not caught or handled, Swift does not know how to proceed and the program immediately crashes with a runtime error. To avoid that crash, we need to wrap the throwing code inside a do-catch block, where we can decide what to do when that specific error happens:
 
-```sh
-swift main.swift
+```swift
+enum InputError: Error {
+    case invalidNumber
+}
+
+enum MathError: Error {
+    case divisionByZero
+}
+
+do {
+    print("Please enter a number:")
+    let rawA = readLine() ?? ""
+
+    if let a = Int(rawA) {
+        
+        print("Please enter a second number:")
+        let rawB = readLine() ?? ""
+        
+        if let b = Int(rawB) {
+            
+            if b == 0 {
+                throw MathError.divisionByZero
+            }
+            else {
+                print(a/b)
+            }
+        }
+        else {
+            throw InputError.invalidNumber
+        }
+    }
+    else {
+        throw InputError.invalidNumber
+    }
+}
+catch is InputError {
+    print("Input error.")
+}
+catch let error as MathError {
+    switch error {
+    case .divisionByZero:
+        print("Division by zero is not possible.")
+    }
+}
+catch {
+    print(error)
+}
 ```
 
-baz
+In this example, both `InputError` and `MathError` are explicitly handled using separate catch blocks. The final catch block serves as a fallback, capturing any errors that do not match the previous cases.
+

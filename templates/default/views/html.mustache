@@ -16,12 +16,12 @@
     <meta name="description" content="{{page.description}}">
     
     <meta property="og:url" content="{{page.permalink}}">
-    <meta property="og:title" content="{{page.title}} - {{site.name}}">
+    <meta property="og:title" content="{{#page.title}}{{.}} - {{site.name}}{{/page.title}}{{^page.title}}{{site.name}}{{/page.title}}">
     <meta property="og:description" content="{{page.description}}">
     <meta property="og:image" content="{{baseUrl}}/images/meta.jpg" />
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{page.title}} - {{site.name}}">
+    <meta name="twitter:title" content="{{#page.title}}{{.}} - {{site.name}}{{/page.title}}{{^page.title}}{{site.name}}{{/page.title}}">
     <meta name="twitter:description" content="{{page.description}}">
     <meta name="twitter:image" content="{{baseUrl}}/images/meta.jpg">
     

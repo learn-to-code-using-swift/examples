@@ -5,45 +5,54 @@ order: 16
 ---
 
 
-foo
+The **repeat-while** loop is very similar to the while loop, but it always runs at least once. Even if the condition is false at the start, the body of the loop is executed first, and then the condition is evaluated. 
+
+Here's the basic counter example using a repeat-while loop:
+
 
 ```swift
-let x = 5
-let y = 5
-var z = 0
+var counter = 1
 
-z = x + y // addition
-print(z) // => 10
-
-z = x - y // subtraction
-print(z) // => 0
-
-z = x * y // multiplication
-print(z) // => 25
-
-z = x / y // division
-print(z) // => 1
-
-
-var x = 10
-
-x += 2 // addition
-print(x) // => 12
-
-x -= 2 // subtraction
-print(x) // => 10
-
-x *= 2 // multiplication
-print(x) // => 20
-
-x /= 2 // division
-print(x) // => 10
+repeat {
+    print("Count is \(counter)")
+    counter += 1
+} 
+while counter <= 5
 ```
 
-bar
+The break keyword can be used inside a repeat-while loop to exit the loop early—before the condition becomes false:
 
-```sh
-swift main.swift
+
+```swift
+var counter = 0
+
+repeat {
+    print("Counter: \(counter)")
+    counter += 1
+
+    if counter == 5 {
+        print("Breaking the loop at counter = 5")
+        break
+    }
+} 
+while counter < 10
 ```
 
-baz
+The continue statement also works with repeat-while loops in the same way it does with regular while loops. It allows you to skip the rest of the current iteration and move directly to the next cycle of the loop:
+
+```swift
+var number = 0
+
+repeat {
+    number += 1
+    
+    if number % 2 == 0 {
+        continue // Skip even numbers
+    }
+    
+    print("Odd number: \(number)")
+} 
+while number < 10
+```
+
+The snippet above is the repeat-while version of the "print odd numbers" example that we saw in the previous example. 

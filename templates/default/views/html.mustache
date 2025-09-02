@@ -12,18 +12,18 @@
     {{#page.prev}}<link rel="prev" href="{{permalink}}">{{/page.prev}}
     {{#page.next}}<link rel="next" href="{{permalink}}">{{/page.next}}
     
-    <title>{{page.title}} - {{site.name}}</title>
+    <title>{{#page.title}}{{.}} - {{site.name}}{{/page.title}}{{^page.title}}{{site.name}}{{/page.title}}</title>
     <meta name="description" content="{{page.description}}">
     
     <meta property="og:url" content="{{page.permalink}}">
     <meta property="og:title" content="{{page.title}} - {{site.name}}">
     <meta property="og:description" content="{{page.description}}">
-    {{#page.imageUrl}}<meta property="og:image" content="{{.}}" />{{/page.imageUrl}}
+    <meta property="og:image" content="{{baseUrl}}/images/meta.jpg" />
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{page.title}} - {{site.name}}">
     <meta name="twitter:description" content="{{page.description}}">
-    {{#page.imageUrl}}<meta name="twitter:image" content="{{.}}">{{/page.imageUrl}}
+    <meta name="twitter:image" content="{{baseUrl}}/images/meta.jpg">
     
     <link
         rel="stylesheet"
@@ -35,9 +35,9 @@
         media="(prefers-color-scheme: dark)"
     >
 
-    <link rel="stylesheet" media="screen" href="/css/variables.css"> 
-    <link rel="stylesheet" media="screen" href="/css/base.css">
-    <link rel="stylesheet" media="screen" href="/css/theme.css">
+    <link rel="stylesheet" media="screen" href="{{baseUrl}}/css/variables.css"> 
+    <link rel="stylesheet" media="screen" href="{{baseUrl}}/css/base.css">
+    <link rel="stylesheet" media="screen" href="{{baseUrl}}/css/theme.css">
 
     {{#page.css}}<link rel="stylesheet" href="{{.}}">{{/page.css}}
 
@@ -72,9 +72,15 @@
 <body>
 
     <main id="page-container">
-    {{$main}}
-        <p>No content.</p>
-    {{/main}}
+        <div style="background: linear-gradient(#000 9%, #190047);">
+            <div class="wrapper" style="padding: 1.5rem; padding-bottom: 0;">
+                <a href="https://theswiftdev.gumroad.com/l/learn-to-code-using-swift/" target="_blank">
+                    <img width="100%" src="{{baseUrl}}/images/book.png" alt="Get the Learn To Code Using Swift book">
+                </a>
+            </div>
+        </div>
+
+    {{$main}}{{/main}}
     </main>
 
     <footer>

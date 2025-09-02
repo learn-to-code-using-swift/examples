@@ -1,6 +1,6 @@
 ---
 title: "Do-catch"
-description: ""
+description: "Handle errors safely using do, multiple catch blocks, and fallback handling to manage different error types gracefully."
 order: 26
 ---
 

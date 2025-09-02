@@ -1,6 +1,6 @@
 ---
 title: "Guard-else"
-description: ""
+description: "Exit early when conditions fail, use with loops and functions, and safely unwrap optionals for cleaner, more readable code."
 order: 28
 ---
 

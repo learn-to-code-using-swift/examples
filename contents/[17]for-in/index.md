@@ -1,6 +1,6 @@
 ---
 title: "For-in"
-description: ""
+description: "Iterate over strings, arrays, ranges, and dictionaries. Use continue, break, .enumerated(), and stride."
 order: 17
 ---
 

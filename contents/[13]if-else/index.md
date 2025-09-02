@@ -1,6 +1,6 @@
 ---
 title: "If-else"
-description: ""
+description: "Write conditions using if, else if, and else, combine logic with operators, use ternary expressions, and optional binding."
 order: 13
 ---
 

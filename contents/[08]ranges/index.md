@@ -1,6 +1,6 @@
 ---
 title: "Ranges"
-description: ""
+description: "Explore closed, half-open, and one-sided ranges, check values with contains, and generate random numbers in ranges."
 order: 8
 ---
 

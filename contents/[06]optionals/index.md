@@ -1,6 +1,6 @@
 ---
 title: "Optionals"
-description: ""
+description: "Understand nil, optional types, force unwrapping, implicitly unwrapped optionals, and the nil coalescing operator."
 order: 6
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Closures"
-description: ""
+description: "Define and use closures with parameters, return values, shorthand syntax, trailing closures, and operators as functions."
 order: 20
 ---
 

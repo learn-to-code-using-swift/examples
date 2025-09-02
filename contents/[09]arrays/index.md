@@ -1,6 +1,6 @@
 ---
 title: "Arrays"
-description: ""
+description: "Create, access, and modify arrays, use mutating and non-mutating methods, and explore sorting, shuffling, and more."
 order: 9
 ---
 

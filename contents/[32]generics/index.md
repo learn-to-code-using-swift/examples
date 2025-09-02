@@ -1,6 +1,6 @@
 ---
 title: "Generics"
-description: ""
+description: "Write reusable, type-safe functions using placeholders, add constraints with where, and work with multiple generic parameters."
 order: 32
 ---
 

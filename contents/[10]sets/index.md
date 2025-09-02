@@ -1,6 +1,6 @@
 ---
 title: "Sets"
-description: ""
+description: "Store unique values, perform fast lookups, use set operations, and check relationships like subsets and supersets."
 order: 10
 ---
 

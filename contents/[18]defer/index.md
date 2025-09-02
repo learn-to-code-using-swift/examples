@@ -1,6 +1,6 @@
 ---
 title: "Defer"
-description: ""
+description: "Schedule cleanup code to run when a scope exits, use multiple defer blocks, and handle loops, functions, and error cases."
 order: 18
 ---
 

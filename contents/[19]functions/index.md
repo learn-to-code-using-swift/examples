@@ -1,6 +1,6 @@
 ---
 title: "Functions"
-description: ""
+description: "Define functions, use parameters, argument labels, variadic and overloaded functions, return values, and tuples."
 order: 19
 ---
 

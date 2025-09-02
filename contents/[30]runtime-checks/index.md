@@ -1,6 +1,6 @@
 ---
 title: "Runtime checks"
-description: ""
+description: "Use assert and assertionFailure for debug checks, precondition for critical conditions, and fatalError for unimplemented code."
 order: 30
 ---
 

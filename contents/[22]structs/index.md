@@ -1,6 +1,6 @@
 ---
 title: "Structs"
-description: ""
+description: "Define properties, use initializers, computed and lazy properties, property observers, mutating methods, and static methods."
 order: 22
 ---
 

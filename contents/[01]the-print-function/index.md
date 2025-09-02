@@ -1,6 +1,6 @@
 ---
 title: "The print function"
-description: ""
+description: "Learn how to use the Swift print function with simple examples. Display text, run code from the command line, and compile Swift programs step by step."
 order: 1
 ---
 

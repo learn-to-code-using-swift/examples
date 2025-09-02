@@ -1,6 +1,6 @@
 ---
 title: "Error types"
-description: ""
+description: "Define enums and structs conforming to Error, throw meaningful errors, and use them with Swift’s error handling system."
 order: 25
 ---
 

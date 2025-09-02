@@ -1,6 +1,6 @@
 ---
 title: "Ownership"
-description: ""
+description: "Use ~Copyable for non-copyable types, and understand consume, borrowing, and inout modifiers for safe resource management."
 order: 34
 ---
 

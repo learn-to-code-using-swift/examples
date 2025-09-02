@@ -1,6 +1,6 @@
 ---
 title: "String operations"
-description: ""
+description: "Explore concatenation, interpolation, multiline strings, properties, escaping, and raw string literals."
 order: 4
 ---
 

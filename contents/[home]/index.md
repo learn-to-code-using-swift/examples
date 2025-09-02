@@ -1,6 +1,6 @@
 ---
 title: "Home"
-description: ""
+description: "Learn Swift by example with hands-on code snippets. Explore real Swift programs, understand core concepts, and start building Swift apps today."
 views: 
     html: pages.home
 type: html

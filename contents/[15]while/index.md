@@ -1,6 +1,6 @@
 ---
 title: "While"
-description: ""
+description: "Repeat code while a condition is true, and control execution with break and continue to manage loop flow."
 order: 15
 ---
 

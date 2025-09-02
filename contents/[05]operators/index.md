@@ -1,6 +1,6 @@
 ---
 title: "Operators"
-description: ""
+description: "Explore assignment, arithmetic, comparison, logical, and compound operators for effective Swift programming."
 order: 5
 ---
 

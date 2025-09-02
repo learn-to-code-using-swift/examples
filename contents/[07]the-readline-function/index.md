@@ -1,6 +1,6 @@
 ---
 title: "The readLine function"
-description: ""
+description: "Read user input as strings, convert to numbers or booleans, and handle multiple lines with examples."
 order: 7
 ---
 

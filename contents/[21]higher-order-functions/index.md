@@ -1,6 +1,6 @@
 ---
 title: "Higher order functions"
-description: ""
+description: "Use map, filter, reduce, sorted, and more on arrays and dictionaries for functional programming."
 order: 21
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Other types"
-description: ""
+description: "Explore Character, escape sequences, fixed-width integers, Float, Double, Any, and tuples with code examples."
 order: 12
 ---
 

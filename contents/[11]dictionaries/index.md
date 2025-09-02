@@ -1,6 +1,6 @@
 ---
 title: "Dictionaries"
-description: ""
+description: "Store key–value pairs, access values safely, update, remove, and use utility methods for fast lookups."
 order: 11
 ---
 

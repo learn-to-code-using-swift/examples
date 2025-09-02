@@ -1,6 +1,6 @@
 ---
 title: "Protocols"
-description: ""
+description: "Define protocols with properties and methods, use them with structs, enums, and classes, add initializers, and enable type flexibility."
 order: 31
 ---
 

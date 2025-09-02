@@ -1,6 +1,6 @@
 ---
 title: "Constants and variables"
-description: ""
+description: "Learn the difference between constants and variables in Swift. See how to use let and var with code examples for immutable and mutable values."
 order: 2
 ---
 

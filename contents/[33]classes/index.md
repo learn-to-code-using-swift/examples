@@ -1,6 +1,6 @@
 ---
 title: "Classes"
-description: ""
+description: "Define initializers, convenience inits, computed and type properties, methods, reference semantics, protocol conformance, and inheritance."
 order: 33
 ---
 

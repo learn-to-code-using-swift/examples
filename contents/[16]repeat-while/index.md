@@ -1,6 +1,6 @@
 ---
 title: "Repeat-while"
-description: ""
+description: "Run code at least once before checking conditions, and use break or continue to control execution flow."
 order: 16
 ---
 

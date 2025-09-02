@@ -1,6 +1,6 @@
 ---
 title: "Pattern matching"
-description: ""
+description: "Match optionals, tuples, and enums, extract associated values, use if case let, where clauses, and loop filtering."
 order: 24
 ---
 

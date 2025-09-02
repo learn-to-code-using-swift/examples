@@ -1,6 +1,6 @@
 ---
 title: "Standard types"
-description: ""
+description: "Explore String, Bool, Int, and Double, and see how type inference simplifies Swift programming."
 order: 3
 ---
 

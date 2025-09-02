@@ -1,6 +1,6 @@
 ---
 title: "Enums"
-description: ""
+description: "Define cases, use raw and associated values, add methods, computed properties, mutating functions, static members, and custom initializers."
 order: 23
 ---
 

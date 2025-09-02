@@ -1,6 +1,6 @@
 ---
 title: "Switch-case"
-description: ""
+description: "Match values, use default cases, fallthrough, intervals, tuples, pattern matching, and value binding in switch statements."
 order: 14
 ---
 

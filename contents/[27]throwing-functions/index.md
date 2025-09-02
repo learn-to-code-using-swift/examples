@@ -1,6 +1,6 @@
 ---
 title: "Throwing functions"
-description: ""
+description: "Mark functions with throws, handle errors using try, do-catch, try?, try!, and use rethrows with throwing closures."
 order: 27
 ---
 

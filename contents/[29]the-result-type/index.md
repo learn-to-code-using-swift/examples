@@ -1,6 +1,6 @@
 ---
 title: "The result type"
-description: ""
+description: "Represent success or failure outcomes, simplify error handling, and replace optional result–error pairs with clearer code."
 order: 29
 ---
 

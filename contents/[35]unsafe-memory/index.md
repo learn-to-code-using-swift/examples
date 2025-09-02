@@ -1,6 +1,6 @@
 ---
 title: "Unsafe memory"
-description: ""
+description: "Work with unsafe pointers, raw memory, buffer pointers, allocation, initialization, and manual memory management."
 order: 35
 ---
 
